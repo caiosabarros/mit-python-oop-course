@@ -1,0 +1,201 @@
+Computer Programming Course on Edx Notes:
+
+Computers can do two things:
+Calculate and remember. Yet, we need to
+use some algorithms to make its computation
+to go faster.
+
+Interesting:
+he explained how there are two different kinds of
+knowledge: the descritive knowledge and the imperative
+knowledge. The first makes an statement, like "3 is prime".
+The second says: to find that 3 is prime, divide 3 by all the
+numbers before it and see that only 1 divides it.
+
+This course is really cool!
+A turing machine could do only 6 primitives operations:
+move left, move right, do nothing, read, scan and write. 
+With that, it can compute anything - anything. That is amazing!
+Also, he stated the Turing complete theorem: anything that can be computed
+in a language can be computed in any language.
+Also,he showed how a computer works. We store in the memory some
+program, then the cpu goes in each line of that program - proccess
+called the flowx of control - till it is done and then go back to
+the first line. The cpu reads it and there is another part which makes
+the calculation.
+ A stored program computer is designed to run any computation, by interpreting a sequence of program instructions that are read into it.
+A stored program computer is designed to compute precisely one computation such as the sqaure root
+
+
+str1 = 'hello'
+print(f"{str1[::-1]}")
+Print the all the elements from the first index to the last
+index from the last to the first.
+
+prints only 5+6 without the 7
+sum = 0
+for k in range(5,7):
+  sum += k
+print(sum)
+
+
+for k in range(11,1,-1):
+    if k==10:
+        print("Hello!")
+    if k%2==0:
+        print(k)
+print 10, 8, ...,2 
+
+bisection search - how the name explicitly says - bysects 
+a set of numbers into two.
+The cool thing was seeing how to guess the number a which
+is sqrt of the number b we only need to get the average number
+of (b+1)/2 and see if a**2 gets passed b. If it does, then a and on
+all wrong. So, we are left with 1 to a and do the same. If a**2 is smaller than
+b, then the number lies in between a and b.
+
+
+Cool learned why sometimes when I compute something and then some 
+weird decimals appear in the results. It is because a computer representes
+every number as binary. Transforming an interger into binary is pretty easy.
+Transforming a float into integer might be hard or even impossible. So,the
+computer get an approximation of it, so that may result in a bit distorted results.
+
+How does Wolfram finds the roots of hard polynomials? Problably using the 
+Newton-Raphson algorithm for root finding
+
+This guy makes small simple things to seem to have their own worlds! That is
+crazy!!!
+
+Important Concepts for Coding:
+Decomposition: Divide and conquer - break the problem into smaller pieces, like functions.
+Abstraction: Do not worry about things in the low-level. Care about what is the input
+and what should the output be.
+
+Divide and conquer: break problem down and also solving a parts of it will solve th ewhole problem
+
+Tuples and Lists:
+Tuples, like strings, cannot be modified - receive assignment in a  specific index.
+Lists, on the other hand, can be modified. Also, usually when a list is called by a method,
+it is changed. For example, list.append(), list.sort(), list.remove(),etc.
+An important thing to notice is that when I create a list a and assign the list b
+like a = b, then they will refer to the same space in memory and any modification in
+a will also change b as well. So, take care with that.
+I can create a copy, that ocuppies a different space in memory by runnin' a=b[:] or
+I can create b like a from scracth.
+
+Functions
+Functions are first class - and finally I understood why - because they can act like
+an object, but they have functionality. They have a type, they can be elements of 
+data structures and they can appear in expressions.
+For example:
+High Order programming is when I use functions as arguments coupled with lists, like 
+in the following:
+def applyToEach(List, function):
+	for i in range9len(L)):
+		L[i]=f(L[i])
+Imagine that f would be fibonnaci, then each element of the list would be substituted 
+by its fib.
+
+
+Unit 4:
+Debugging and all of that. I stored the screen shoots in the folde in the
+Windows version. Only look in there and make a summary.
+
+Unit 5:
+OOP:
+Basically, he introduces the idea that I can create different ways - classes -
+of how I store my data. Someone created the class List, Tuples, Dictionaries and etc.
+I can do the same. The thing is: each class has attributes and methods that allow
+me to process the data showed through that class. 
+OOP makes the complexity of the system to dimish, since its modular, i.e, it uses
+different classes only when they are called, instead of using all the classes without
+all being necessary. 
+
+Classes:
+When creating a class, I must have the __init__ function that can give the 
+data attributes to the instance of the class I will create. Instance of a class
+is like the data object [1,2,3] in the class List. 
+There are other methods that come in along with the __init__ method and also I can 
+override them according to my necessities. For example; in the Coordinate system,
+the subtraction of two points is not given by c=a-b, but by c.x= a.x-b.x
+and the same for y.
+
+An interesting idea he said that it is important to have in mind is the idea of frames - 
+quadros ou quadrados.
+
+When I say:
+Coordinate.distance(a,b), I am referring the class Coordinate's frame/body/scope
+and getting the distance() method and applying in to two instances.
+When I do:
+c = Coordinate(x,y)
+origin = Coordinate(0,0)
+c.distance(origin), Im saying: in the instance c of the class Coordinate,
+since c inherits all the properties from its class, including its frame of
+methods, find the method distance, and apply it to (self=c,origin), since
+distance requires two arguments, but Python already makes self = c since
+it understands it is being called by the instance c.  
+
+Another important thing to remember is inheratance.
+Class Person(Animal): # Person inherats all the methods and attributes from
+Animal class.
+Class Person(Animal, Mamifero): # Person inherits primarily from Animal,
+but if the method specified is not found there, then it will look it up
+inside Mamifero's methods - behaviors.
+
+Another important thing is that I can have classes that are ghost classes - 
+in order to organize things better.
+The would be written as:
+Class Student(object):
+	pass
+
+Class Phd(Student):
+	...
+Class Undergrade(Student):
+	...
+obj = Undergrade(...args)
+return isinstance(obj, Student) #returns True
+
+#Generators:
+So, OOP really is using is using modularity and this achieved by classes, whereas functional 
+programming is using modularity and this achieved by functions.
+
+I just learned about it!
+The yield words!
+
+Why is it good?
+Lets suppose I want to print out an unbounded sequence of the fibonacci numbers
+or the prime numbers. If I were to do it the normal way, Id put all these numbers 
+in a array and be appending new fib or prime number to the end of the list.
+Since my list is unbounded, that would start consuming a lot of memory to
+keep that whole list, this being used to track all prime numbers.
+
+Whereas, generator stores only the last number, instead of all the list.
+When you call the next method, it gives you the first prime. When you call
+it again, it gives the second, but not keeping the first. And so on.
+So, you can call it infinitely, and it will give you whichever you want.
+
+Here is a list of best cases to use a generator:
+Printing out an unbounded sequence of prime numbers, where the prime numbers are successively computed by division by smaller primes
+Printing out an unbounded sequence of Fibonacci numbers
+
+
+Here is a list of best cases to use a standard function
+Finding the nth Fibonacci number
+Finding the score of a word from the 6.00x Word Game of Pset 4
+Iterating over a sequence of numbers in a random order, where no number is repeated
+
+Either:
+Printing out a bounded sequence of prime numbers, where the prime numbers are successively computed by division by smaller primes
+
+If we were to use a generator to iterate over a million numbers, how many numbers do we need to store in memory at once?
+We need to store 2 numbers - one for the current value, and one for the max value.
+def genOneMillion():
+    maxNum = 1000000
+    current = -1
+    while current < maxNum:
+        current += 1
+        yield current
+
+
+
