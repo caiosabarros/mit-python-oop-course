@@ -197,5 +197,87 @@ def genOneMillion():
         current += 1
         yield current
 
+Unit 6
+Good content!
+
+To measure an algorithm efficiency, we usually look at the timing and space
+this algorithm consumes. In these lectures, we'll be looking only into timing.
+It is true that computers are becoming evermore faster, but also data sets are becoming
+evermore bigger. So, algorithm efficiency is key.
+
+Timing:
+We could measure it importing the time library, counting the number of operations
+in a algorithm or using a more abstract idea of the order of growth.
+Using the time library isnt efficient because if varies in between computers,
+in between implementations.
+Measuring the number of operations seems good, but we have to determine how many
+operations are happening in a algorithm. And that may be hard dependin on the implementation,
+so it also depends on the implementations.
+The best idea is to use the order of growth. This is the order, so it tries
+to predict how time grows as this algo receives a different input!
+
+Searching and Sorting Algorithms!
+Pretty cool!
+
+To find an element in a list, I can linearly search on it, by looking
+at each element of the list and comparing to the element I want to know
+if it is there. For the worst case, the element is not in the list and I need to
+look at all the elements in the list. So, O(n).
+
+I can though find it by doing a bisection search - halving the list every time
+according to the position of the element. For the worst case, I will run
+it i times to search my element in the list of length len(L).
+So, to get the one element, 1 = leng(L)/2^i, so i = log(len(L)).
+So, O(len(L)). Of course, the bisection search only works if the list is sorted.
+For the bisection search to be more relevant for me than the 
+linear search, I would then need to have: Sort + O(log(len(L))) < O(n).
+That's impossible - at least is what he said. So, for searching one element,
+it is easier to use linear search. But for searching K elements, we have:
+Sort + K*O(log(len(L))) < K*O(n). For large K, order of growth of Sorting 
+becomes irrelevant. So, for searching multiple times, it is better to sort, then
+bisection search!
+
+Sorting Algorithms:
+Monkey Sort:
+Shuffle the list and check if it is sorted.
+Best case: O(n). Worst Case: ? I think no one knows!
+
+Bubbling Sort:
+ 5 1 4 2 8
+ 1 4 2 5 8
+ 1 2 4 5 8
+ 1 2 4 5 8
+
+Basically compares each element with the next to swap them if needed.
+This will take a loop of len(L)-1 comparisons that will run len(L)-1 times
+in the worst case. So, O(n^2)
+
+Selection Sort:
+5 1 4 2 8
+1 5 4 2 8
+1 2 4 5 8 
+1 2 4 5 8
+1 2 4 5 8
+1 2 4 5 8!
+
+In this example, Selection sort took more time than the bubbling sort, but
+that's not the overall truth. Selection sort is O(n^2) also, but it
+is a bit faster:
+Let's say I have many people in line with different heights. I check if the
+first person is the least by comparing with everyone else. If so, keep her
+there and ignore here to sort the rest of the line - and that's why it becomes
+faster than bubbling, because bubbling is always checking every person, while
+selection sort already eliminates those sorted. If not, till the end of the line,
+after doing the comparisons, we'll have the person who's the least. She'll
+be in the first position, we'll ignore her and continue!
+
+Merge Sort is the best! 
+O(nlogn).
+It's not as simple though to find the complexity - maybe it is because I am kinda tired.
+But basically is to dividing the list till we have lonely elements. Those will
+be compared to their neighbor and merged in a sorted way. 
+
+Linear Search: O(n)
+Merge Sorting + Binary Search: O(nlogn)+O(logn)=O((n+1)logn))=O(nlog)
 
 
